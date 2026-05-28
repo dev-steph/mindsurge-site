@@ -294,20 +294,6 @@ function App() {
                 {/* Glass reflection overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-15" />
               </div>
-
-              {/* Floating Active Badge */}
-              <motion.div 
-                className="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur-md border border-slate-800 px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 z-20"
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="w-3 h-3 bg-emerald-500 rounded-full animate-ping" />
-                <div className="w-3 h-3 bg-emerald-500 rounded-full absolute" />
-                <div>
-                  <p className="text-[10px] uppercase text-slate-400 font-semibold tracking-wider">Mobile App UI</p>
-                  <p className="text-xs font-bold text-white">Live Android Build</p>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
 
