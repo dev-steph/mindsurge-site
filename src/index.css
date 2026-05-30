@@ -6,4 +6,41 @@
     color: #f1f5ff;
     font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   }
+
+  .light {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+  }
+  .light .bg-\[\#0A0E1A\] { background-color: #f8fafc !important; }
+  .light .bg-\[\#0A0E1A\]\/85 { background-color: rgba(248, 250, 252, 0.85) !important; }
+  .light .text-slate-100 { color: #0f172a !important; }
+  .light .text-slate-200 { color: #1e293b !important; }
+  .light .text-slate-300 { color: #334155 !important; }
+  .light .text-slate-400 { color: #475569 !important; }
+  .light .text-slate-500 { color: #64748b !important; }
+  .light .text-white { color: #0f172a !important; }
+  
+  .light .bg-slate-900\/40 { background-color: #ffffff !important; }
+  .light .bg-slate-900\/60 { background-color: #ffffff !important; }
+  .light .bg-slate-900\/80 { background-color: #f1f5f9 !important; }
+  .light .bg-slate-950\/20 { background-color: #f8fafc !important; }
+  .light .bg-slate-950\/60 { background-color: #ffffff !important; }
+  .light .bg-slate-950\/80 { background-color: #ffffff !important; }
+  .light .bg-slate-900 { background-color: #ffffff !important; }
+  .light .bg-slate-950 { background-color: #f1f5f9 !important; }
+  .light .bg-slate-800 { background-color: #e2e8f0 !important; }
+  .light .bg-slate-800\/50 { background-color: #e2e8f0 !important; }
+  .light .bg-slate-800\/60 { background-color: #e2e8f0 !important; }
+  
+  .light .border-slate-800 { border-color: #e2e8f0 !important; }
+  .light .border-slate-850 { border-color: #e2e8f0 !important; }
+  .light .border-slate-900 { border-color: #cbd5e1 !important; }
+  .light .border-slate-950 { border-color: #cbd5e1 !important; }
+  .light .border-slate-800\/80 { border-color: #e2e8f0 !important; }
+  .light .border-slate-700 { border-color: #cbd5e1 !important; }
+  .light .border-slate-700\/55 { border-color: #cbd5e1 !important; }
+
+  /* Hide background glows in light mode */
+  .light .bg-blue-600\/10 { display: none !important; }
+  .light .bg-purple-600\/10 { display: none !important; }
 }

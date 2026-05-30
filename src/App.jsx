@@ -14,7 +14,9 @@ import {
   X,
   FileText,
   Compass,
-  GraduationCap
+  GraduationCap,
+  Sun,
+  Moon
 } from 'lucide-react'
 import appScreenshot from './assets/photo_2026-05-29_00-41-59.jpg'
 import logoImg from './assets/logo.png'
@@ -22,6 +24,14 @@ import logoImg from './assets/logo.png'
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem('mindsurge-theme')
+    return saved ? saved === 'dark' : true
+  })
+
+  useEffect(() => {
+    localStorage.setItem('mindsurge-theme', isDark ? 'dark' : 'light')
+  }, [isDark])
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -93,7 +103,7 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-slate-100 selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden font-sans">
+    <div className={`min-h-screen bg-[#0A0E1A] text-slate-100 selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden font-sans ${!isDark ? 'light' : ''}`}>
       {/* Background Glows */}
       <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
       <div className="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -126,6 +136,13 @@ function App() {
             <a href="#showcase" className="text-sm font-medium text-slate-400 hover:text-white transition">App Preview</a>
             <a href="#roadmap" className="text-sm font-medium text-slate-400 hover:text-white transition">Roadmap</a>
             <a href="#project-status" className="text-sm font-medium text-slate-400 hover:text-white transition">Development Status</a>
+            <button 
+              onClick={() => setIsDark(!isDark)}
+              className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all border border-transparent hover:border-slate-700/50"
+              title="Toggle Theme"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <a 
               href={webAppUrl} 
               target="_blank" 
@@ -160,6 +177,13 @@ function App() {
             <a href="#showcase" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-white transition py-2 border-b border-slate-900">App Preview</a>
             <a href="#roadmap" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-white transition py-2 border-b border-slate-900">Roadmap</a>
             <a href="#project-status" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-white transition py-2 border-b border-slate-900">Development Status</a>
+            <button 
+              onClick={() => setIsDark(!isDark)}
+              className="flex items-center justify-between text-lg font-medium text-slate-300 hover:text-white transition py-2 border-b border-slate-900"
+            >
+              {isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <a 
               href={webAppUrl} 
               target="_blank" 
