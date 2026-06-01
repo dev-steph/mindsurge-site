@@ -103,7 +103,7 @@ function App() {
   ]
 
   return (
-    <div className={`min-h-screen selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden font-sans ${isDark ? 'dark bg-[#0A0E1A] text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
+    <div className={`min-h-screen selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden font-sans ${isDark ? 'dark bg-[#0A0E1A] text-slate-100' : 'bg-light-bg text-light-text-primary'}`}>
       {/* Background Glows */}
       <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] hidden dark:block bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
       <div className="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] hidden dark:block bg-purple-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -112,7 +112,7 @@ function App() {
       <motion.nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrollY > 20 
-            ? 'bg-slate-50/85 dark:bg-[#0A0E1A]/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 py-4 shadow-lg shadow-slate-200/50 dark:shadow-black/10' 
+            ? 'bg-light-bg/85 dark:bg-[#0A0E1A]/85 backdrop-blur-md border-b border-light-border dark:border-slate-800/80 py-4 shadow-none dark:shadow-black/10' 
             : 'bg-transparent py-6'
         }`}
         initial={{ y: -50, opacity: 0 }}
@@ -123,7 +123,7 @@ function App() {
           <a href="#" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute inset-0 bg-blue-500/20 rounded-xl blur-md group-hover:bg-blue-500/40 transition duration-300" />
-              <img src={logoImg} alt="MindSurge Logo" className="w-10 h-10 rounded-xl relative border border-slate-200 dark:border-slate-700/55 shadow-md shadow-blue-500/10" />
+              <img src={logoImg} alt="MindSurge Logo" className="w-10 h-10 rounded-xl relative border border-light-border dark:border-slate-700/55 shadow-md shadow-blue-500/10" />
             </div>
             <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-200 to-purple-400 bg-clip-text text-transparent font-display">
               MindSurge
@@ -132,13 +132,13 @@ function App() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Features</a>
-            <a href="#showcase" className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">App Preview</a>
-            <a href="#roadmap" className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Roadmap</a>
-            <a href="#project-status" className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Development Status</a>
+            <a href="#features" className="text-sm font-medium text-light-text-secondary hover:text-light-text-primary dark:text-slate-400 dark:hover:text-white transition">Features</a>
+            <a href="#showcase" className="text-sm font-medium text-light-text-secondary hover:text-light-text-primary dark:text-slate-400 dark:hover:text-white transition">App Preview</a>
+            <a href="#roadmap" className="text-sm font-medium text-light-text-secondary hover:text-light-text-primary dark:text-slate-400 dark:hover:text-white transition">Roadmap</a>
+            <a href="#project-status" className="text-sm font-medium text-light-text-secondary hover:text-light-text-primary dark:text-slate-400 dark:hover:text-white transition">Development Status</a>
             <button 
               onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-full text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800/50 transition-all border border-transparent hover:border-slate-300 dark:hover:border-slate-700/50"
+              className="p-2 rounded-full text-light-text-secondary hover:text-light-text-primary dark:text-slate-400 dark:hover:text-white hover:bg-light-surface-variant dark:hover:bg-slate-800/50 transition-all border border-transparent hover:border-light-border dark:hover:border-slate-700/50"
               title="Toggle Theme"
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -157,7 +157,7 @@ function App() {
           {/* Mobile Menu Btn */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800/50 transition"
+            className="md:hidden p-2 rounded-lg text-light-text-secondary hover:text-light-text-primary dark:text-slate-400 dark:hover:text-white hover:bg-light-surface-variant dark:hover:bg-slate-800/50 transition"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -168,18 +168,18 @@ function App() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            className="fixed inset-0 top-[72px] bg-slate-50 dark:bg-[#0A0E1A] z-45 border-t border-slate-200 dark:border-slate-800/80 px-6 py-8 flex flex-col gap-6 md:hidden"
+            className="fixed inset-0 top-[72px] bg-light-bg dark:bg-[#0A0E1A] z-45 border-t border-light-border dark:border-slate-800/80 px-6 py-8 flex flex-col gap-6 md:hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
           >
-            <a href="#features" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-slate-200 dark:border-slate-900">Features</a>
-            <a href="#showcase" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-slate-200 dark:border-slate-900">App Preview</a>
-            <a href="#roadmap" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-slate-200 dark:border-slate-900">Roadmap</a>
-            <a href="#project-status" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-slate-200 dark:border-slate-900">Development Status</a>
+            <a href="#features" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-light-text-primary hover:text-light-text-primary dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-light-border dark:border-slate-900">Features</a>
+            <a href="#showcase" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-light-text-primary hover:text-light-text-primary dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-light-border dark:border-slate-900">App Preview</a>
+            <a href="#roadmap" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-light-text-primary hover:text-light-text-primary dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-light-border dark:border-slate-900">Roadmap</a>
+            <a href="#project-status" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-light-text-primary hover:text-light-text-primary dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-light-border dark:border-slate-900">Development Status</a>
             <button 
               onClick={() => setIsDark(!isDark)}
-              className="flex items-center justify-between text-lg font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-slate-200 dark:border-slate-900"
+              className="flex items-center justify-between text-lg font-medium text-light-text-primary hover:text-light-text-primary dark:text-slate-300 dark:hover:text-white transition py-2 border-b border-light-border dark:border-slate-900"
             >
               {isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -222,7 +222,7 @@ function App() {
         </motion.h1>
 
         <motion.p 
-          className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-normal leading-relaxed mb-10 max-w-3xl"
+          className="text-lg md:text-xl text-light-text-secondary dark:text-slate-400 font-normal leading-relaxed mb-10 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -247,7 +247,7 @@ function App() {
           </a>
           <a 
             href="#roadmap"
-            className="px-8 py-4 rounded-2xl text-center font-semibold bg-white dark:bg-slate-900/60 backdrop-blur border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center gap-1.5 transition-all shadow-xl shadow-slate-200/50 dark:shadow-none"
+            className="px-8 py-4 rounded-2xl text-center font-semibold bg-light-surface dark:bg-slate-900/60 backdrop-blur border border-light-border dark:border-slate-800 hover:bg-light-surface-variant dark:hover:bg-slate-800/60 hover:border-light-border dark:hover:border-slate-700 text-light-text-primary dark:text-slate-300 flex items-center justify-center gap-1.5 transition-all dark:shadow-none"
           >
             Explore Roadmap
           </a>
@@ -255,12 +255,12 @@ function App() {
       </section>
 
       {/* Features Grid */}
-      <section id="features" className="py-24 border-t border-slate-200 dark:border-slate-900 relative z-10 px-6 max-w-7xl mx-auto">
+      <section id="features" className="py-24 border-t border-light-border dark:border-slate-900 relative z-10 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 font-display">
             Built for Academic Efficiency
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg">
+          <p className="text-light-text-secondary dark:text-slate-400 text-base md:text-lg">
             MindSurge combines the best features of file servers and community directories to support academic workflows.
           </p>
         </div>
@@ -269,29 +269,29 @@ function App() {
           {features.map((f, i) => (
             <motion.div 
               key={i}
-              className="p-6 rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-850 backdrop-blur hover:bg-slate-50 dark:hover:bg-slate-900/80 hover:border-slate-300 dark:hover:border-slate-800 transition-all hover:scale-[1.02] flex flex-col items-start text-left shadow-xl shadow-slate-200/50 dark:shadow-none relative group"
+              className="p-6 rounded-2xl bg-light-surface dark:bg-slate-900/40 border border-light-border dark:border-slate-850 backdrop-blur hover:bg-light-surface-variant dark:hover:bg-slate-900/80 hover:border-light-border dark:hover:border-slate-800 transition-all hover:scale-[1.02] flex flex-col items-start text-left dark:shadow-lg dark:shadow-black/5 relative group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-300" />
-              <div className="p-3 bg-slate-100 dark:bg-slate-950/80 rounded-xl border border-slate-200 dark:border-slate-800/80 mb-5 relative">
+              <div className="p-3 bg-light-surface-variant dark:bg-slate-950/80 rounded-xl border border-light-border dark:border-slate-800/80 mb-5 relative">
                 {f.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{f.title}</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{f.desc}</p>
+              <h3 className="text-lg font-bold text-light-text-primary dark:text-white mb-2">{f.title}</h3>
+              <p className="text-sm text-light-text-secondary dark:text-slate-400 leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Screen Showcase Deep Dive */}
-      <section id="showcase" className="py-24 border-t border-slate-200 dark:border-slate-900 relative z-10 px-6 max-w-7xl mx-auto">
+      <section id="showcase" className="py-24 border-t border-light-border dark:border-slate-900 relative z-10 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 flex justify-center">
             <motion.div 
-              className="relative p-4 bg-white dark:bg-slate-900/40 rounded-3xl border border-slate-200 dark:border-slate-850 backdrop-blur max-w-sm shadow-xl shadow-slate-200/50 dark:shadow-none"
+              className="relative p-4 bg-light-surface dark:bg-slate-900/40 rounded-3xl border border-light-border dark:border-slate-850 backdrop-blur max-w-sm dark:shadow-xl"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -301,11 +301,11 @@ function App() {
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[3rem] blur-2xl opacity-30 animate-pulse pointer-events-none" />
 
               {/* Phone Mock Frame (Emulator UI) */}
-              <div className="relative border-[12px] border-slate-100 dark:border-slate-950 bg-slate-100 dark:bg-slate-950 rounded-[2.8rem] shadow-2xl overflow-hidden aspect-[9/19.5]">
+              <div className="relative border-[12px] border-light-surface-variant dark:border-slate-950 bg-light-surface-variant dark:bg-slate-950 rounded-[2.8rem] shadow-2xl overflow-hidden aspect-[9/19.5]">
                 {/* Phone Speaker/Camera Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-100 dark:bg-slate-950 rounded-b-2xl z-20 flex justify-center items-center">
-                  <div className="w-12 h-1 bg-slate-300 dark:bg-slate-850 rounded-full mb-1" />
-                  <div className="w-2.5 h-2.5 bg-slate-300 dark:bg-slate-900 rounded-full ml-3 mb-1" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-light-surface-variant dark:bg-slate-950 rounded-b-2xl z-20 flex justify-center items-center">
+                  <div className="w-12 h-1 bg-light-border dark:bg-slate-850 rounded-full mb-1" />
+                  <div className="w-2.5 h-2.5 bg-light-border dark:bg-slate-900 rounded-full ml-3 mb-1" />
                 </div>
                 
                 {/* Screenshot */}
@@ -328,7 +328,7 @@ function App() {
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-6 font-display">
               A Dashboard Made to Focus
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg mb-8 leading-relaxed">
+            <p className="text-light-text-secondary dark:text-slate-400 text-base md:text-lg mb-8 leading-relaxed">
               The mobile app UI offers a clean dashboard loaded with active modules. MindSurge presents options designed around student preferences:
             </p>
 
@@ -338,8 +338,8 @@ function App() {
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1">Clear Course Navigation</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Jump directly into syllabus files, documents, and notes mapped to your courses.</p>
+                  <h4 className="text-base font-bold text-light-text-primary dark:text-white mb-1">Clear Course Navigation</h4>
+                  <p className="text-sm text-light-text-secondary dark:text-slate-400">Jump directly into syllabus files, documents, and notes mapped to your courses.</p>
                 </div>
               </div>
 
@@ -348,8 +348,8 @@ function App() {
                   <FileText className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1">High-Fidelity Document Viewer</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">View notes and exam guides natively inside the browser or native app using optimized render viewports.</p>
+                  <h4 className="text-base font-bold text-light-text-primary dark:text-white mb-1">High-Fidelity Document Viewer</h4>
+                  <p className="text-sm text-light-text-secondary dark:text-slate-400">View notes and exam guides natively inside the browser or native app using optimized render viewports.</p>
                 </div>
               </div>
 
@@ -358,8 +358,8 @@ function App() {
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1">Resource Tracking</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Organize your study resources and access them instantly whenever you need to prepare.</p>
+                  <h4 className="text-base font-bold text-light-text-primary dark:text-white mb-1">Resource Tracking</h4>
+                  <p className="text-sm text-light-text-secondary dark:text-slate-400">Organize your study resources and access them instantly whenever you need to prepare.</p>
                 </div>
               </div>
             </div>
@@ -368,7 +368,7 @@ function App() {
       </section>
 
       {/* Ongoing Project & Timeline (Roadmap) */}
-      <section id="roadmap" className="py-24 border-t border-slate-200 dark:border-slate-900 relative z-10 px-6 max-w-7xl mx-auto">
+      <section id="roadmap" className="py-24 border-t border-light-border dark:border-slate-900 relative z-10 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <Clock className="w-3.5 h-3.5" />
@@ -377,14 +377,14 @@ function App() {
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 font-display">
             Active Development Journey
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg">
-            MindSurge is an <strong className="text-slate-900 dark:text-slate-200">ongoing project</strong>. We are actively refining user interfaces, improving build outputs, and developing new tools.
+          <p className="text-light-text-secondary dark:text-slate-400 text-base md:text-lg">
+            MindSurge is an <strong className="text-light-text-primary dark:text-slate-200">ongoing project</strong>. We are actively refining user interfaces, improving build outputs, and developing new tools.
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Center Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-light-border dark:bg-slate-800 -translate-x-1/2" />
 
           <div className="space-y-12">
             {roadmap.map((item, idx) => (
@@ -399,13 +399,13 @@ function App() {
                 transition={{ duration: 0.6 }}
               >
                 {/* Timeline Dot Indicator */}
-                <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 -translate-x-1/2 z-20 flex items-center justify-center">
+                <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-light-surface dark:bg-slate-900 border-2 border-light-border dark:border-slate-800 -translate-x-1/2 z-20 flex items-center justify-center">
                   {item.status === 'completed' ? (
                     <div className="w-3.5 h-3.5 rounded-full bg-emerald-500 shadow-md shadow-emerald-500/50" />
                   ) : item.status === 'active' ? (
                     <div className="w-3.5 h-3.5 rounded-full bg-blue-500 shadow-md shadow-blue-500/50 animate-pulse" />
                   ) : (
-                    <div className="w-3.5 h-3.5 rounded-full bg-slate-300 dark:bg-slate-700" />
+                    <div className="w-3.5 h-3.5 rounded-full bg-light-border dark:bg-slate-700" />
                   )}
                 </div>
 
@@ -414,10 +414,10 @@ function App() {
 
                 {/* Content Panel Column */}
                 <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
-                  <div className={`p-6 rounded-2xl bg-white dark:bg-slate-900/40 border backdrop-blur text-left transition duration-300 hover:border-slate-300 dark:hover:border-slate-750 relative shadow-xl shadow-slate-200/50 dark:shadow-none ${
+                  <div className={`p-6 rounded-2xl bg-light-surface dark:bg-slate-900/40 border backdrop-blur text-left transition duration-300 hover:border-light-border dark:hover:border-slate-750 relative dark:shadow-none ${
                     item.status === 'active' 
-                      ? 'border-blue-500/35 dark:border-blue-500/35 shadow-blue-500/10' 
-                      : 'border-slate-200 dark:border-slate-850'
+                      ? 'border-blue-500/35 dark:border-blue-500/35 shadow-none dark:shadow-blue-500/10' 
+                      : 'border-light-border dark:border-slate-850'
                   }`}>
                     {/* Floating Status Tag */}
                     <span className={`absolute top-6 right-6 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md border ${
@@ -425,18 +425,18 @@ function App() {
                         ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
                         : item.status === 'active'
                         ? 'bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400 animate-pulse'
-                        : 'bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-500'
+                        : 'bg-light-surface-variant dark:bg-slate-900 border-light-border dark:border-slate-800 text-slate-500'
                     }`}>
                       {item.status}
                     </span>
 
                     <span className="text-xs font-semibold text-slate-500 block mb-1">{item.date}</span>
                     <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest block mb-2">{item.phase}</span>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">{item.title}</h3>
+                    <h3 className="text-lg font-bold text-light-text-primary dark:text-white mb-4">{item.title}</h3>
                     
                     <ul className="space-y-2">
                       {item.details.map((d, dIdx) => (
-                        <li key={dIdx} className="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 text-sm">
+                        <li key={dIdx} className="flex items-center gap-2.5 text-light-text-secondary dark:text-slate-400 text-sm">
                           {item.status === 'completed' ? (
                             <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" />
                           ) : item.status === 'active' ? (
@@ -444,7 +444,7 @@ function App() {
                               <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                             </div>
                           ) : (
-                            <div className="w-4 h-4 rounded-full border border-slate-300 dark:border-slate-800 shrink-0" />
+                            <div className="w-4 h-4 rounded-full border border-light-border dark:border-slate-800 shrink-0" />
                           )}
                           <span>{d}</span>
                         </li>
@@ -459,28 +459,28 @@ function App() {
       </section>
 
       {/* Project Status Section */}
-      <section id="project-status" className="py-24 border-t border-slate-200 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/20 relative z-10 px-6">
+      <section id="project-status" className="py-24 border-t border-light-border dark:border-slate-900 bg-light-bg dark:bg-slate-950/20 relative z-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 text-left">
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-6 font-display">
                 Current Deployment Status
               </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg mb-8 leading-relaxed">
+              <p className="text-light-text-secondary dark:text-slate-400 text-base md:text-lg mb-8 leading-relaxed">
                 The MindSurge app has been compiled, packaged, and verified for both android devices and web hosting targets. You can load modules or download the release assets:
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="p-4 bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-850 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none">
+                <div className="p-4 bg-light-surface dark:bg-slate-900/60 border border-light-border dark:border-slate-850 rounded-xl dark:shadow-none">
                   <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest block mb-1">Android Client</span>
-                  <span className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-lg font-bold text-light-text-primary dark:text-white flex items-center gap-2">
                     v1.0.0-release
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                   </span>
                 </div>
-                <div className="p-4 bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-850 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none">
+                <div className="p-4 bg-light-surface dark:bg-slate-900/60 border border-light-border dark:border-slate-850 rounded-xl dark:shadow-none">
                   <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest block mb-1">Web Hosting Target</span>
-                  <span className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="text-lg font-bold text-light-text-primary dark:text-white flex items-center gap-2">
                     Active Deploy
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
                   </span>
@@ -489,35 +489,35 @@ function App() {
 
               <div className="p-5 bg-blue-500/5 border border-blue-500/10 rounded-2xl mb-8">
                 <h4 className="text-sm font-bold text-blue-400 mb-1">Ongoing Project Note</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-xs text-light-text-secondary dark:text-slate-400 leading-relaxed">
                   MindSurge is updated regularly. Feature requests, resource submissions, or program layout tweaks are actively monitored and deployed live to hosting weekly.
                 </p>
               </div>
             </div>
 
             <div className="lg:col-span-6 flex flex-col gap-4">
-              <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-850 text-left shadow-xl shadow-slate-200/50 dark:shadow-none">
+              <div className="p-6 rounded-2xl bg-light-surface dark:bg-slate-900/40 border border-light-border dark:border-slate-850 text-left dark:shadow-none">
                 <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-400 w-fit mb-4">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">Designed for Every Student</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                <h4 className="text-base font-bold text-light-text-primary dark:text-white mb-2">Designed for Every Student</h4>
+                <p className="text-sm text-light-text-secondary dark:text-slate-400 leading-relaxed">
                   MindSurge is built to accommodate university students across all academic paths. Whether you are studying sciences, humanities, business, or engineering, the platform provides a unified dashboard to organize and access your learning materials.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-850 text-left shadow-xl shadow-slate-200/50 dark:shadow-none">
-                <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3">Release &amp; Access Vectors</h4>
+              <div className="p-6 rounded-2xl bg-light-surface dark:bg-slate-900/40 border border-light-border dark:border-slate-850 text-left dark:shadow-none">
+                <h4 className="text-base font-bold text-light-text-primary dark:text-white mb-3">Release &amp; Access Vectors</h4>
                 <div className="space-y-3">
                   <a 
                     href={webAppUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-950 hover:border-slate-300 dark:hover:border-slate-700 transition"
+                    className="flex justify-between items-center p-3 bg-light-bg dark:bg-slate-950/60 border border-light-border dark:border-slate-800 rounded-xl hover:bg-light-surface-variant dark:hover:bg-slate-950 hover:border-light-border dark:hover:border-slate-700 transition"
                   >
                     <div className="flex items-center gap-3">
                       <Monitor className="w-5 h-5 text-blue-400" />
-                      <span className="text-sm font-semibold text-slate-900 dark:text-white">Access Web App Portal</span>
+                      <span className="text-sm font-semibold text-light-text-primary dark:text-white">Access Web App Portal</span>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-500" />
                   </a>
@@ -525,11 +525,11 @@ function App() {
                   <a 
                     href="/App/app-release.apk"
                     download="app-release.apk"
-                    className="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-950 hover:border-slate-300 dark:hover:border-slate-700 transition"
+                    className="flex justify-between items-center p-3 bg-light-bg dark:bg-slate-950/60 border border-light-border dark:border-slate-800 rounded-xl hover:bg-light-surface-variant dark:hover:bg-slate-950 hover:border-light-border dark:hover:border-slate-700 transition"
                   >
                     <div className="flex items-center gap-3">
                       <Smartphone className="w-5 h-5 text-emerald-400" />
-                      <span className="text-sm font-semibold text-slate-900 dark:text-white">Download Android Client (APK)</span>
+                      <span className="text-sm font-semibold text-light-text-primary dark:text-white">Download Android Client (APK)</span>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-500" />
                   </a>
@@ -541,11 +541,11 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-slate-200 dark:border-slate-900 relative z-10 px-6">
+      <footer className="py-12 border-t border-light-border dark:border-slate-900 relative z-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <img src={logoImg} alt="Logo" className="w-8 h-8 rounded-lg border border-slate-200 dark:border-slate-800" />
-            <span className="text-base font-bold text-slate-900 dark:text-white">MindSurge</span>
+            <img src={logoImg} alt="Logo" className="w-8 h-8 rounded-lg border border-light-border dark:border-slate-800" />
+            <span className="text-base font-bold text-light-text-primary dark:text-white">MindSurge</span>
           </div>
 
           <p className="text-xs text-slate-500">
@@ -553,9 +553,9 @@ function App() {
           </p>
 
           <div className="flex items-center gap-6">
-            <a href="#features" className="text-xs text-slate-500 hover:text-slate-900 dark:hover:text-white transition">Features</a>
-            <a href="#showcase" className="text-xs text-slate-500 hover:text-slate-900 dark:hover:text-white transition">Preview</a>
-            <a href="#roadmap" className="text-xs text-slate-500 hover:text-slate-900 dark:hover:text-white transition">Roadmap</a>
+            <a href="#features" className="text-xs text-slate-500 hover:text-light-text-primary dark:hover:text-white transition">Features</a>
+            <a href="#showcase" className="text-xs text-slate-500 hover:text-light-text-primary dark:hover:text-white transition">Preview</a>
+            <a href="#roadmap" className="text-xs text-slate-500 hover:text-light-text-primary dark:hover:text-white transition">Roadmap</a>
           </div>
         </div>
       </footer>
