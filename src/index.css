@@ -2,12 +2,12 @@
 
 @theme {
   --variant-dark: (&:where(.dark, .dark *));
-  --color-light-bg: #F2F4F7;
+  --color-light-bg: #F5F6F8;
   --color-light-surface: #FFFFFF;
-  --color-light-surface-variant: #ECEEF2;
-  --color-light-text-primary: #1A2132;
-  --color-light-text-secondary: #6B7585;
-  --color-light-border: #DDE1E9;
+  --color-light-surface-variant: #EDEEF1;
+  --color-light-text-primary: #0D1117;
+  --color-light-text-secondary: #64748B;
+  --color-light-border: #D8DCE4;
 }
 
 @layer base {
